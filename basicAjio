@@ -1,0 +1,26 @@
+package Basic;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ajio {
+	
+	public static void main(String[] args) {
+		
+		ChromeDriver driver=new ChromeDriver();
+		
+		driver.get("https://www.ajio.com/");
+		// search for the elements 
+		
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.name("searchVal")).sendKeys("shoes");
+		// search for the elements search-icon perform the action of click
+		driver.findElement(By.className("ic-search")).click();
+		
+		//driver.findElement(By.xpath("//label[contains(text() , 'Men')]")).click();
+		
+		driver.findElement(By.xpath("//img[contains(@src ,'https://assets.ajio.com/medias/sys_master/root/20231212/UwGb/65778c42ddf7791519c4dcb4/')]")).click();
+	}
+
+}
